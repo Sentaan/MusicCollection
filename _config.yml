@@ -1,0 +1,15 @@
+title:                    Sentaan's Collection
+email:                    sentaanyt@gmail.com
+description:              A visual representation of the music and related things that I own.
+author:                   Sentaan
+baseurl:                  
+url:                      
+
+#Social Profiles
+instagram_username:       sentaan.talks
+tiktok_username:          sentaan.reviews
+lastfm_username:          sentaan
+youtube_username:         sentaan
+
+#build settings
+markdown:                 kramdown

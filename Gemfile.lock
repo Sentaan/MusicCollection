@@ -36,6 +36,9 @@ GEM
       safe_yaml (~> 1.0)
       terminal-table (>= 1.8, < 4.0)
       webrick (~> 1.7)
+    jekyll-feed (0.17.0)
+      jekyll (>= 3.7, < 5.0)
+    jekyll-paginate (1.1.0)
     jekyll-sass-converter (3.0.0)
       sass-embedded (~> 1.54)
     jekyll-watch (2.2.1)
@@ -72,7 +75,9 @@ PLATFORMS
   x86_64-linux
 
 DEPENDENCIES
-  jekyll (>= 4.0.0)
+  jekyll (>= 4.4.0)
+  jekyll-feed (~> 0.6)
+  jekyll-paginate (~> 1.1.0)
 
 BUNDLED WITH
    2.5.23

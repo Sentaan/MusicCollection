@@ -3,17 +3,33 @@ tite: Artists
 layout: default
 ---
 
-<div class="container" id="artistContainer">
-    <ul class="nobullets" id="artistList">
-        {% for post in site.categories.artist %}
-            <li>
-                <div class="card">
-                    <img src="{{ post.header-image }}" alt="">
-                    <div class="container">
-                        <a href="{{ post.url }}">{{ post.title }}</a>
-                    </div>
-                </div>
-            </li>
-        {% endfor %}
-    </ul>
+
+
+<div>
+    <div class="row" id="artistContainer">
+        <ul class="row" id="artistList">
+            {% capture posts %}
+                {% for post in site.categories.artist %}
+                    |{{ post.sort-key}}#{{ post.title }}#{{ post.url }}#{{ post.header-image }} 
+                {% endfor %}
+            {% endcapture %}
+            <!-- creates null card in array at pos 0, solved by if statement above the postitems assign-->
+            {% assign sortedposts = posts | split: '|' | sort %}
+            {% for post in sortedposts %}
+                {% if post != "
+                
+                    " %} <!-- removes null item-->
+                    {% assign postitems = post | split: '#' %}
+                    <li class="card col-3 artist-card center">
+                        <a class="center" href="{{ postitems[2] }}">
+                            <div class="container center">
+                                <img src="{{ postitems[3] }}" class="card-img-top artist-card-image center" alt="">
+                            </div>
+                            <h2 class="card-title artist-card-title">{{ postitems[1] }}</h2>
+                        </a>
+                    </li>
+                {% endif %}
+            {% endfor %}
+        </ul>
+    </div>
 </div>
